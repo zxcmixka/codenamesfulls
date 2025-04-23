@@ -1,0 +1,55 @@
+*{
+    background-color: #262626;
+}
+
+.redTeam{
+    background-color: rgba(190, 0, 0, 0.066);
+    border-left: solid #f05050;
+    height: 60vh;
+    width: 15vh;
+    margin-top: 20vh;
+}
+
+.blueTeam{
+    background-color: rgba(0, 111, 190, 0.066);
+    border-right: solid #6d9fcb;
+    height: 60vh;
+    width: 15vh;
+    margin-top: -60vh;
+    margin-left: 92.5%;
+}
+
+.gearpng{
+    width: 3vh;
+    background-color: #3b3b3b;
+}
+
+.gearbutton{
+    width: 5vh;
+    height: 5vh;
+    margin-left: 97.5%;
+    margin-top: 15vh;
+    background-color: #3b3b3b;
+    border: none;
+}
+
+.start{
+    width: 5vh;
+    background-color: #3b3b3b;
+    margin: 1vh;
+}
+
+.buttonmenu{
+    margin: 5vh;
+    background-color: #3b3b3b;
+    border: none;
+}
+
+.gearmenu{
+    position: absolute;
+    width: 50vh;
+    height: 25vh;
+    top: 75vh;
+    right: 5vh;
+    background-color: #3b3b3b;
+}
