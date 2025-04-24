@@ -1,5 +1,6 @@
 *{
     background-color: #262626;
+    color: white;
 }
 
 .redTeam{
@@ -52,4 +53,11 @@
     top: 75vh;
     right: 5vh;
     background-color: #3b3b3b;
+}
+
+.teambutton{
+    margin: 1vh;
+    border: none;
+    background-color: #ffffff00;
+    cursor: pointer;
 }
