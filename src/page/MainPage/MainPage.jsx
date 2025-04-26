@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import style from "./MainPage.module.css"
 import gear from "../../componets/images/gear.png"
 import start from "../../componets/images/play.png"
+import { GameLogic } from "../../componets/GameLogic";
 
 export const MainPage = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -23,8 +24,16 @@ export const MainPage = () => {
 
   return (
     <div className={style.mainDiv}>
-      <div className={style.redTeam}></div>
-      <div className={style.blueTeam}></div>
+      <div className={style.redTeam}>
+        <button className={style.teambutton}>Become master</button>
+        ____________
+        <button className={style.teambutton}>join team</button>
+      </div>
+      <div className={style.blueTeam}>
+      <button className={style.teambutton}>Become master</button>
+        ____________
+      <button className={style.teambutton}>join team</button>
+      </div>
 
       <div className={style.gear} ref={menuRef}>
         <button className={style.gearbutton} onClick={toggleMenu}>
@@ -40,6 +49,7 @@ export const MainPage = () => {
             <button className={style.buttonmenu}></button>
           </div>
         )}
+        <GameLogic />
       </div>
     </div>
   );
