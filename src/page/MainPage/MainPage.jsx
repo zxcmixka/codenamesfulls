@@ -24,22 +24,23 @@ export const MainPage = () => {
 
   return (
     <div className={style.mainDiv}>
+      <header>
+        link
+      </header>
       <div className={style.redTeam}>
         <button className={style.teambutton}>Become master</button>
-        ____________
         <button className={style.teambutton}>join team</button>
       </div>
       <div className={style.blueTeam}>
       <button className={style.teambutton}>Become master</button>
-        ____________
       <button className={style.teambutton}>join team</button>
       </div>
+
 
       <div className={style.gear} ref={menuRef}>
         <button className={style.gearbutton} onClick={toggleMenu}>
           <img className={style.gearpng} src={gear} alt="gear" />
         </button>
-
         {isMenuVisible && (
           <div className={style.gearmenu}>
             <button className={style.buttonmenu}>
