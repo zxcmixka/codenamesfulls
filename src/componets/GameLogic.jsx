@@ -47,24 +47,78 @@ import style from './GameLogic.module.css'
       setRandomWords(wordsWithRoles);
     };
 
-// TEAM AND ROLE
 
-    const teamSelect = (team) => {
-      setTeam(team);
-      setRole(null);
-    };
-  
-    const roleSelect = (role) => {
-      setRole(role);
-    };
-  
-    const confirmSelection = () => {
-      if (team && role) {
-        getRandomWords();
-      }
-    };
+    return (
+      <div className={style.gameContainer}>
+        <div className={style.redTeam}>
+          <button 
+            className={`${style.teambutton} ${team === 'red' && role === 'spymaster' ? style.active : ''}`}
+            onClick={() => {
+              setTeam('red');
+              setRole('spymaster');
+              if (randomWords.length === 0) getRandomWords();
+            }}
+          >
+            Become master
+          </button>
+          <button 
+            className={`${style.teambutton} ${team === 'red' && role === 'operative' ? style.active : ''}`}
+            onClick={() => {
+              setTeam('red');
+              setRole('operative');
+              if (randomWords.length === 0) getRandomWords();
+            }}
+          >
+            Join team
+          </button>
+        </div>
+    
+        <div className={style.gameArea}>
+          <button 
+            onClick={getRandomWords}
+            className={style.startButton}
+          >
+            {randomWords.length ? 'Перезапуск игры' : 'Начать игру'}
+          </button>
+          
+          <div className={style.board}>
+            {randomWords.map((item, index) => (
+              <div 
+                key={index}
+                className={`${style.card} ${
+                  role === 'spymaster' ? style[item.role] : style.card
+                } ${
+                  item.revealed ? style.revealed : ''
+                }`}
+              >
+                {item.word}
+              </div>
+            ))}
+          </div>
+        </div>
 
-    return(
-        <div></div>
-    );   
+        <div className={style.blueTeam}>
+          <button 
+            className={`${style.teambutton} ${team === 'blue' && role === 'spymaster' ? style.active : ''}`}
+            onClick={() => {
+              setTeam('blue');
+              setRole('spymaster');
+              if (randomWords.length === 0) getRandomWords();
+            }}
+          >
+            Become master
+          </button>
+          <button 
+            className={`${style.teambutton} ${team === 'blue' && role === 'operative' ? style.active : ''}`}
+            onClick={() => {
+              setTeam('blue');
+              setRole('operative');
+              if (randomWords.length === 0) getRandomWords();
+            }}
+          >
+            Join team
+          </button>
+        </div>
+      </div>
+    );
   }

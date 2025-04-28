@@ -3,23 +3,6 @@
     color: white;
 }
 
-.redTeam{
-    background-color: rgba(190, 0, 0, 0.066);
-    border-left: solid #f05050;
-    height: 70vh;
-    width: 15vh;
-    margin-top: 20vh;
-}
-
-.blueTeam{
-    background-color: rgba(0, 111, 190, 0.066);
-    border-right: solid #6d9fcb;
-    height: 70vh;
-    width: 15vh;
-    margin-top: -70vh;
-    margin-left: 92.5%;
-}
-
 .gearpng{
     width: 3vh;
     background-color: #3b3b3b;
@@ -55,9 +38,3 @@
     background-color: #3b3b3b;
 }
 
-.teambutton{
-    margin: 1vh;
-    border: none;
-    background-color: #ffffff00;
-    cursor: pointer;
-}

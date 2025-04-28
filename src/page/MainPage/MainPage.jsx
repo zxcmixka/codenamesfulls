@@ -27,14 +27,7 @@ export const MainPage = () => {
       <header>
         link
       </header>
-      <div className={style.redTeam}>
-        <button className={style.teambutton}>Become master</button>
-        <button className={style.teambutton}>join team</button>
-      </div>
-      <div className={style.blueTeam}>
-      <button className={style.teambutton}>Become master</button>
-      <button className={style.teambutton}>join team</button>
-      </div>
+
 
 
       <div className={style.gear} ref={menuRef}>
