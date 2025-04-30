@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from './GameLogic.module.css'
 
 
@@ -8,6 +8,14 @@ import style from './GameLogic.module.css'
     const [randomWords, setRandomWords] = useState([]);
     const [team, setTeam] = useState(null);
     const [role, setRole] = useState(null);
+    const [startGame, setStartGame] = useState(false);
+
+//timer
+
+const [time, setTime] = useState(120);
+const [timerRunning, setTymerRunning] = useState(false);
+const [timeLimit, setTimeLimit] = useState(120);
+const timerRef = useRef(null);
 
 // WORDS AND RANDOM GENERATION
 
@@ -45,6 +53,26 @@ import style from './GameLogic.module.css'
         role: roles[index]
       }))
       setRandomWords(wordsWithRoles);
+      setGameStarted(true);
+      startTimer();
+
+      const startTimer = () => {
+        if(isTymerRunning) return;
+        setIsTimerRunning(true);
+        timerRef.current = setInterval(() => {
+          setTime(prev => {
+            if (prev <= -1) {
+              clearInterval(timerRef.current);
+              setIsTimerRunning(false);
+              handleTurnEnd();
+              return 0;
+            }
+            return prev -1;
+          });
+        }, 1000);
+      }
+
+
     };
 
 
