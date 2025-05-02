@@ -70,6 +70,12 @@ const timerRef = useRef(null);
             return prev -1;
           });
         }, 1000);
+
+        const resetTimer = (seconds = null) => {
+          clearInterval(timerRef.current);
+          setTimeLeft(seconds || timeLimit);
+          setIsTimerRunning(false);
+        };
       }
 
 
