@@ -53,30 +53,6 @@ const timerRef = useRef(null);
         role: roles[index]
       }))
       setRandomWords(wordsWithRoles);
-      setGameStarted(true);
-      startTimer();
-
-      const startTimer = () => {
-        if(isTymerRunning) return;
-        setIsTimerRunning(true);
-        timerRef.current = setInterval(() => {
-          setTime(prev => {
-            if (prev <= -1) {
-              clearInterval(timerRef.current);
-              setIsTimerRunning(false);
-              handleTurnEnd();
-              return 0;
-            }
-            return prev -1;
-          });
-        }, 1000);
-
-        const resetTimer = (seconds = null) => {
-          clearInterval(timerRef.current);
-          setTimeLeft(seconds || timeLimit);
-          setIsTimerRunning(false);
-        };
-      }
 
 
     };
